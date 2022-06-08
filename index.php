@@ -30,7 +30,7 @@ $webpage_url = $feeds->channel->link;
         $date = date('Y-m-d', strtotime($item->pubDate));
         $comments = $item->comments;
         ?>
-        <div class="feed mt-5">
+        <div class="feed mt-5 bg-light rounded pt-5 pb-3 px-5">
             <h2>
                 <a class="text-dark text-decoration-none display-6" href="<?= $link; ?>" target="_blank">
                    <?= $title; ?>
