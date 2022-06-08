@@ -12,7 +12,7 @@
 $RSS_URL = 'https://dev98.de/feed/';
 $feeds = simplexml_load_file($RSS_URL);
 
-if ($feeds) {
+if ($feeds):
 $webpage_title = $feeds->channel->title;
 $webpage_url = $feeds->channel->link;
 ?>
@@ -20,12 +20,12 @@ $webpage_url = $feeds->channel->link;
 <div class="container bg-white rounded py-3 px-5">
     <div class="main">
         <h1 class="display-3 mb-5">
-            <a class="text-decoration-none" href='<?= $webpage_url ?>' target='_blank'>RSS Feeds</a>
+            <a class="text-decoration-none" href='<?= $webpage_url ?>' target='_blank'>RSS Feeds dev98</a>
         </h1>
     </div>
     <?php
 
-    foreach ($feeds->channel->item as $item) {
+    foreach ($feeds->channel->item as $item):
         $title = $item->title;
         $description = $item->description;
         $link = $item->link;
@@ -38,22 +38,17 @@ $webpage_url = $feeds->channel->link;
                 <a class="text-dark text-decoration-none display-6" href="<?= $link; ?>"
                    target="_blank"><?= $title; ?></a>
             </h2>
-            <p>
+            <p class="text-black-50">
                 <?= $date; ?>
-                <a href="<?= $comments; ?>" target="_blank">Comments</a>
+                <a class="text-decoration-none" href="<?= $comments; ?>" target="_blank">Comments</a>
             </p>
             <p><?= $description; ?></p>
         </div>
 
         <?php
-    }
+    endforeach;
     echo "</div></body>";
 
-    } else {
+    else:
         echo "<h1>No RSS feeds found</h1>";
-    }
-
-
-    ?>
-
-
+    endif;
