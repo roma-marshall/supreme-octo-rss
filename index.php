@@ -27,6 +27,8 @@ if ($feeds) {
 
         <?php
     }
+} else {
+    echo "<h1>No RSS feeds found</h1>";
 }
 
 
