@@ -15,7 +15,7 @@ $webpage_title = $feeds->channel->title;
 $webpage_url = $feeds->channel->link;
 ?>
 <body class="bg-light">
-<div class="container bg-white rounded py-3 px-5">
+<div class="container bg-white rounded py-3 px-5 my-5">
 <div class="row">
     <div class="main">
         <h1 class="display-3">
