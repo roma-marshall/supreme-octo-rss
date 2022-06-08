@@ -18,8 +18,9 @@ $webpage_url = $feeds->channel->link;
 ?>
 <body class="bg-light">
 <div class="container bg-white rounded py-3 px-5">
+<div class="row">
     <div class="main">
-        <h1 class="display-3 mb-5">
+        <h1 class="display-3">
             <a class="text-decoration-none" href='<?= $webpage_url ?>' target='_blank'>RSS Feeds dev98</a>
         </h1>
     </div>
@@ -33,10 +34,11 @@ $webpage_url = $feeds->channel->link;
         $comments = $item->comments;
         ?>
 
-        <div class="feed my-5">
+        <div class="feed mt-5">
             <h2>
-                <a class="text-dark text-decoration-none display-6" href="<?= $link; ?>"
-                   target="_blank"><?= $title; ?></a>
+                <a class="text-dark text-decoration-none display-6" href="<?= $link; ?>" target="_blank">
+                   <?= $title; ?>
+                </a>
             </h2>
             <p class="text-black-50">
                 <?= $date; ?>
@@ -47,7 +49,7 @@ $webpage_url = $feeds->channel->link;
 
         <?php
     endforeach;
-    echo "</div></body>";
+    echo "</div></div></body>";
 
     else:
         echo "<h1>No RSS feeds found</h1>";
