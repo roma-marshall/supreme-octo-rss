@@ -6,8 +6,6 @@
             integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
             crossorigin="anonymous"></script>
 </head>
-
-
 <?php
 $RSS_URL = 'https://dev98.de/feed/';
 $feeds = simplexml_load_file($RSS_URL);
@@ -25,7 +23,6 @@ $webpage_url = $feeds->channel->link;
         </h1>
     </div>
     <?php
-
     foreach ($feeds->channel->item as $item):
         $title = $item->title;
         $description = $item->description;
@@ -33,7 +30,6 @@ $webpage_url = $feeds->channel->link;
         $date = date('Y-m-d', strtotime($item->pubDate));
         $comments = $item->comments;
         ?>
-
         <div class="feed mt-5">
             <h2>
                 <a class="text-dark text-decoration-none display-6" href="<?= $link; ?>" target="_blank">
@@ -46,11 +42,9 @@ $webpage_url = $feeds->channel->link;
             </p>
             <p><?= $description; ?></p>
         </div>
-
         <?php
     endforeach;
     echo "</div></div></body>";
-
     else:
         echo "<h1>No RSS feeds found</h1>";
     endif;
