@@ -10,7 +10,7 @@ if ($feeds) {
         $title = $item->title;
         $description = $item->description;
         $link = $item->link;
-        $date = date('D, d M Y', strtotime($item->pubDate));
+        $date = date('Y-m-d', strtotime($item->pubDate));
         ?>
 
         <div class="App">
