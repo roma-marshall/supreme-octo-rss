@@ -11,13 +11,17 @@ if ($feeds) {
         $description = $item->description;
         $link = $item->link;
         $date = date('Y-m-d', strtotime($item->pubDate));
+        $comments = $item->comments;
         ?>
 
         <div class="App">
             <h2>
                 <a href="<?= $link; ?>" target="_blank"><?= $title; ?></a>
             </h2>
-            <p><?= $date; ?></p>
+            <p>
+                <?= $date; ?>
+                <a href="<?= $comments; ?>" target="_blank">Comments</a>
+            </p>
             <p><?= $description; ?></p>
         </div>
 
