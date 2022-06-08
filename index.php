@@ -20,7 +20,7 @@ $webpage_url = $feeds->channel->link;
 <div class="row">
     <div class="main">
         <h1 class="display-3">
-            <a class="text-decoration-none" href='<?= $webpage_url ?>' target='_blank'>RSS Feeds dev98</a>
+            <a class="text-decoration-none" href='<?= $webpage_url; ?>' target='_blank'>RSS Feeds dev98</a>
         </h1>
     </div>
     <?php
